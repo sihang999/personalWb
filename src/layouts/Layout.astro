@@ -35,11 +35,11 @@ import '../styles/global.css';
 				document.documentElement.classList.toggle('dark', savedTheme === 'dark');
 			}
 
-			let currentLang = localStorage.getItem('lang') || 'es';
+			let currentLang = localStorage.getItem('lang') || 'en';
 			document.documentElement.setAttribute('data-lang', currentLang);
 
 			window.updatePageContent = function() {
-				const lang = document.documentElement.getAttribute('data-lang') || 'es';
+				const lang = document.documentElement.getAttribute('data-lang') || 'en';
 				
 				const langBtn = document.getElementById('lang-btn');
 				if (langBtn) {
