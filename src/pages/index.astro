@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import heroPhoto from '../assets/sihang1.jpg';
-import cvFile from '../assets/CV/CV_Javier_Castillo.pdf';
+import cvFile from '../assets/CV/CV_Sihang_Wu.pdf';
 
 const translations = {
   greeting: { 
@@ -58,7 +58,7 @@ const translations = {
 	<Header />
 	
 	<main class="min-h-screen px-4 sm:px-6 md:px-6">
-		<section class="max-w-3xl mx-auto min-h-[calc(100vh-5rem)] flex flex-col justify-center pt-32 sm:pt-48 pb-16 sm:pb-24 fade-in">
+		<section class="max-w-3xl mx-auto min-h-[70vh] flex flex-col justify-center pt-30 sm:pt-30 pb-10 sm:pb-10 fade-in">
 			<div class="flex flex-col items-center gap-6 sm:gap-8 text-center">
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
 					<div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center overflow-hidden animated-border always-visible flex-shrink-0 shadow-lg dark:shadow-white/20">
@@ -78,14 +78,17 @@ const translations = {
 						<span class="font-semibold text-gray-900 dark:text-white">Technologist in Information Systems</span> and <span class="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span> with more than 2 years of experience, specialized in creating modern, scalable and user-centered solutions.
 					</p>
 					<div class="flex flex-wrap gap-2 sm:gap-3 justify-center px-2 sm:px-0">
-						<a href="/projects" class="cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:animated-bg transition-all" data-en={translations.viewProjects.en} data-es={translations.viewProjects.es}>
-							{translations.viewProjects.en}
+						<a href={cvFile} download="CV_Sihang_Wu.pdf"
+							class="cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:animated-bg transition-all"
+							data-en={translations.downloadCv.en}
+							data-es={translations.downloadCv.es}>
+							{translations.downloadCv.en}
 						</a>
 						<a href="/contact" class="animated-border cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-medium rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" data-en={translations.getInTouch.en} data-es={translations.getInTouch.es}>
 							{translations.getInTouch.en}
 						</a>
 					</div>
-					<div class="mt-8 sm:mt-10 flex justify-center px-2 sm:px-0">
+					<div class="hidden mt-8 sm:mt-10 flex justify-center px-2 sm:px-0">
 						<article class="cv-download-card group" aria-label="Download CV card">
 							<div class="cv-download-card-inner">
 								<div class="text-gray-50 text-left">
