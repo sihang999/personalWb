@@ -15,7 +15,7 @@ const translations = {
 
 const socialLinks = [
 	{ name: 'LinkedIn', icon: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z', href: 'https://www.linkedin.com/in/sihang-wu-509626209' },
-	{ name: 'Phone: +86 18270230128', icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z', href: 'sms:+8618270230128' },
+	{ name: 'Phone: +8618270230128', icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z', href: 'sms:+8618270230128' },
 	{ name: 'Email: 1205348215@qq.com', icon: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z', href: 'mailto:1205348215@qq.com' },
 	{
 		name: 'WeChat: wusihang2001',
@@ -43,56 +43,21 @@ const socialLinks = [
 			<div class="parallax-section">
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 					{
-					socialLinks.map((social) => (
-						<a 
-						href={social.href} 
-						class="animated-border cursor-pointer flex items-center justify-between gap-3 p-3 sm:p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-900 dark:hover:border-gray-500 transition-all hover:scale-105 group">
-
-						<!-- 左边内容 -->
-						<div class="flex items-center gap-3">
-							<svg class="w-5 sm:w-6 h-5 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-							<path d={social.icon}/>
-							</svg>
-
-							<span class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">
-							{social.name}
-							</span>
-						</div>
-
-						<!-- 右侧复制按钮 -->
-						{
-							(social.name.includes('WeChat') || social.name.includes('Email') || social.name.includes('Phone')) && (
-							<button
-								 class="copy-btn relative w-6 h-6 flex items-center justify-center p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-								data-value={
-								social.name.includes('WeChat')
-									? 'wusihang2001'
-									: social.name.includes('Email')
-									? '1205348215@qq.com'
-									: '+86 18270230128'
-								}
-								onclick="event.preventDefault(); event.stopPropagation(); handleCopy(this)"
-							>
-
-								<!-- 默认复制图标 -->
-								<svg class="copy-icon w-4 h-4 text-gray-500 transition-all duration-200 opacity-100 scale-100 absolute"
-									fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<rect x="9" y="9" width="13" height="13" rx="2"></rect>
-								<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+						socialLinks.map((social) => (
+							<a 
+								href={social.href} 
+								onclick={social.name === 'WeChat: wusihang2001' 
+									? "event.preventDefault(); navigator.clipboard.writeText('wusihang2001'); alert('WeChat ID copied!')" 
+									: null}
+								class="animated-border cursor-pointer flex items-center gap-3 p-3 sm:p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-900 dark:hover:border-gray-500 transition-all hover:scale-105 group">
+								<svg class="w-5 sm:w-6 h-5 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+									<path d={social.icon}/>
 								</svg>
-
-								<!-- 成功图标 -->
-								<svg class="success-icon w-4 h-4 text-green-500 transition-all duration-200 opacity-0 scale-75 absolute"
-									fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-								</svg>
-
-							</button>
-							)
-						}
-
-						</a>
-					))
+								<span class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+									{social.name}
+								</span>
+							</a>
+						))
 					}
 				</div>
 			</div>
@@ -129,31 +94,5 @@ const socialLinks = [
 				});
 			});
 		});
-
-window.handleCopy = function(button) {
-  const value = button.getAttribute('data-value');
-  navigator.clipboard.writeText(value);
-
-  const copyIcon = button.querySelector('.copy-icon');
-  const successIcon = button.querySelector('.success-icon');
-
-  // copy → 淡出 + 缩小
-  copyIcon.classList.remove('opacity-100', 'scale-100');
-  copyIcon.classList.add('opacity-0', 'scale-75');
-
-  // success → 淡入 + 放大
-  successIcon.classList.remove('opacity-0', 'scale-75');
-  successIcon.classList.add('opacity-100', 'scale-100');
-
-  setTimeout(() => {
-    // success → 淡出
-    successIcon.classList.remove('opacity-100', 'scale-100');
-    successIcon.classList.add('opacity-0', 'scale-75');
-
-    // copy → 恢复
-    copyIcon.classList.remove('opacity-0', 'scale-75');
-    copyIcon.classList.add('opacity-100', 'scale-100');
-  }, 1200);
-}
 	</script>
 </Layout>
