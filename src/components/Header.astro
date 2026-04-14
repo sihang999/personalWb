@@ -12,7 +12,7 @@ const currentPage = Astro.url.pathname;
 			<a href="/projects" class={`text-sm font-medium transition-colors whitespace-nowrap ${currentPage === '/projects' ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`} data-en="Projects" data-es="项目">
 				Projects
 			</a>
-			<a href="/work" class={`text-sm font-medium transition-colors whitespace-nowrap ${currentPage === '/work' ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`} data-en="Work" data-es="工作经验">
+			<a href="/work" class={`text-sm font-medium transition-colors whitespace-nowrap ${currentPage === '/work' ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`} data-en="Work" data-es="工作经历">
 				Work
 			</a>
 			<a href="/contact" class={`text-sm font-medium transition-colors whitespace-nowrap ${currentPage === '/contact' ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`} data-en="Contact" data-es="联系">
@@ -51,16 +51,16 @@ const currentPage = Astro.url.pathname;
 
 	<!-- Mobile Menu Dropdown -->
 	<div id="mobile-menu" class="hidden absolute top-14 left-4 right-4 backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 space-y-2 shadow-lg sm:hidden">
-		<a href="/" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Home" data-es="Inicio">
+		<a href="/" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Home" data-es="主页">
 			Home
 		</a>
-		<a href="/projects" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/projects' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Projects" data-es="Proyectos">
+		<a href="/projects" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/projects' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Projects" data-es="项目">
 			Projects
 		</a>
-		<a href="/work" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/work' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Work" data-es="Trabajo">
+		<a href="/work" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/work' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Work" data-es="工作经历">
 			Work
 		</a>
-		<a href="/contact" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/contact' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Contact" data-es="Contacto">
+		<a href="/contact" onclick="window.closeMobileMenu()" class={`block px-3 py-2 rounded-lg transition-colors font-medium text-sm ${currentPage === '/contact' ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}`} data-en="Contact" data-es="联系">
 			Contact
 		</a>
 	</div>
