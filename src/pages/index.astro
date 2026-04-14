@@ -8,56 +8,66 @@ import cvFile from '../assets/CV/CV_Sihang_Wu.pdf';
 const translations = {
   greeting: { 
     en: "Hello, I'm", 
-    es: "Hola, soy" 
+    es: "你好，我是" 
   },
   name: { 
     en: "Sihang Wu", 
-    es: "Sihang Wu" 
+    es: "吴思航" 
   },
-  description: { 
-    en: "Technologist in Information Systems and Full Stack Developer with more than 2 years of experience, specialized in creating modern, scalable and user-centered solutions.", 
-    es: "Tecnólogo en Sistemas de información y Desarrollador Full Stack con más de 2 años de experiencia, especializado en crear soluciones modernas, escalables y centradas en el usuario." 
+  heroTitle: {
+    en: "Analog/Mixed-Signal IC Design Engineer",
+    es: "模拟/混合信号IC设计工程师"
+  },
+  heroSubtitle: {
+    en: "Focused on PLL/DLL design, system modeling, and high-performance circuit implementation.",
+    es: "专注于PLL/DLL设计、系统建模以及高性能集成电路实现"
   },
   availability: {
     en: "Open to work",
-    es: "Disponible para trabajar"
-  },
-  viewProjects: { 
-    en: "View Projects", 
-    es: "Ver Proyectos" 
+    es: "开放求职中"
   },
   getInTouch: { 
     en: "Get in Touch", 
-    es: "Contactar" 
+    es: "联系我" 
   },
-	roleTitle: {
-		en: "Full Stack Developer",
-		es: "Full Stack Developer"
-	},
-	downloadCv: {
-		en: "Download CV",
-		es: "Descargar CV"
-	},
+  downloadCv: {
+    en: "Download CV",
+    es: "下载简历"
+  },
   about: { 
     en: "About Me", 
-    es: "Sobre mí" 
-  },
-  aboutDesc: {
-    es: "Soy Desarrollador Full Stack con experiencia en la creación de aplicaciones web completas, desde el diseño de la arquitectura hasta la implementación y despliegue. Trabajo integrando APIs, bases de datos y servicios modernos, con foco en rendimiento, mantenibilidad y experiencia de usuario. Me adapto bien a equipos colaborativos, sigo buenas prácticas de desarrollo y busco entregar soluciones estables que aporten valor real al negocio. Estoy interesado en oportunidades remotas o híbridas donde pueda seguir creciendo profesionalmente y contribuir a proyectos bien estructurados.",
-    en: "I am a Full Stack Developer with experience building end-to-end web applications, from architecture design to implementation and deployment. I work integrating APIs, databases, and modern services, with a focus on performance, maintainability, and user experience. I adapt well to collaborative teams, follow development best practices, and aim to deliver stable solutions that bring real business value. I am interested in remote or hybrid opportunities where I can continue growing professionally and contribute to well-structured projects."
+    es: "关于我" 
   },
   tech: { 
     en: "Tech Stack", 
-    es: "Tecnologías" 
+    es: "技能" 
+  },
+
+  projects: {
+    title: {
+      en: "Projects",
+      es: "项目"
+    },
+    description: {
+      en: "Selected projects showcasing my technical skills.",
+      es: ""
+    },
+    viewProject: {
+      en: "View Project",
+      es: "查看项目"
+    },
+    viewAll: {
+      en: "View all projects →",
+      es: "查看所有项目 →"
+    }
   }
 };
 
 const educationTranslations = {
-  subtitle: { en: 'My Journey', es: 'Mi Trayectoria' },
-  title: { en: 'Education', es: 'Educación' },
+  title: { en: 'Education', es: '教育背景' },
   description: { 
     en: 'A timeline of my academic background.',
-    es: 'Una línea de tiempo de mi formación académica.'
+    es: ''
   }
 };
 
@@ -66,31 +76,33 @@ const education = [
     year: '10/2023 - 04/2026',
     yearES: '10/2023 - 04/2026',
     title: 'M.Sc. Communication and Electronics Engineering',
-    titleES: 'Máster en Ingeniería de Comunicaciones y Electrónica',
+    titleES: '通信与电子工程硕士',
     school: 'Technical University of Munich',
+    schoolES: '慕尼黑工业大学',
     description: 'Focused on analog/mixed-signal IC design, PLL/DLL systems, and circuit modeling.',
-    descriptionES: 'Enfoque en diseño de circuitos analógicos/mixtos, sistemas PLL/DLL y modelado de circuitos.'
+    descriptionES: '专注于模拟/混合信号集成电路设计、PLL/DLL系统以及电路建模'
   },
   {
     year: '2020 - 2023',
     yearES: '2020 - 2023',
     title: 'B.Sc. Electrical and Electronic Engineering',
-    titleES: 'Grado en Ingeniería Eléctrica y Electrónica',
+    titleES: '电气与电子工程学士',
     school: 'University of Duisburg-Essen',
+    schoolES: '杜伊斯堡-埃森大学',
     description: 'Part of a dual-degree program with Zhengzhou University, focused on electronics and communication systems.',
-    descriptionES: 'Parte de un programa de doble titulación con la Universidad de Zhengzhou, enfocado en electrónica y sistemas de comunicación.'
+    descriptionES: '与郑州大学合作的双学位项目，专注于电子与电气系统'
   },
   {
     year: '2018 - 2020',
     yearES: '2018 - 2020',
     title: 'B.Sc. Electrical and Information Engineering',
-    titleES: 'Grado en Ingeniería Eléctrica y Electrónica',
+    titleES: '电气与信息工程学士',
     school: 'Zhengzhou University',
+    schoolES: '郑州大学',
     description: 'Dual-degree program in collaboration with University of Duisburg-Essen, covering electronics, signal processing, and communication systems.',
-    descriptionES: 'Programa de doble titulación en colaboración con la Universidad de Duisburg-Essen, enfocado en electrónica, procesamiento de señales y sistemas de comunicación.'
+    descriptionES: '与杜伊斯堡-埃森大学合作的双学位项目，涵盖电子、电信号处理及信息系统'
   }
 ];
-
 
 
 const esDescriptions = import.meta.glob('../project-descriptions/*/descripcion.md', { query: '?raw', import: 'default' });
@@ -122,12 +134,11 @@ const featuredProjects = projects.slice(0, 2);
 
 
 
-
 const workTranslations = {
-  title: { en: 'Work Experience', es: 'Experiencia Laboral' },
+  title: { en: 'Work Experience', es: '工作经历' },
   description: { 
     en: 'My professional and research experience.',
-    es: 'Mi experiencia profesional y de investigación.'
+    es: ''
   }
 };
 
@@ -136,28 +147,31 @@ const work = [
     year: '08/2025 - 04/2026',
     yearES: '08/2025 - 04/2026',
     title: 'Embedded Systems & Bionic Skin Research Assistant',
-    titleES: 'Asistente de Investigación en Sistemas Embebidos y Piel Biónica',
+    titleES: '嵌入式系统与仿生皮肤科研助理',
     company: 'Technical University of Munich | Institute of Cognitive Systems',
+    companyES: '慕尼黑工业大学 | 认知系统研究所',
     description: 'Developed embedded hardware systems based on hexagonal MCU modules. Responsible for FPC integration and system testing under Linux environments, ensuring system stability and functionality.',
-    descriptionES: 'Desarrollé sistemas embebidos basados en módulos MCU hexagonales, integrando hardware FPC y realizando pruebas en entorno Linux.'
+    descriptionES: '基于六边形MCU模块开发嵌入式硬件系统，负责FPC集成及Linux环境下系统测试，确保系统稳定性与功能完整性'
   },
   {
     year: '02/2025 - 08/2025',
     yearES: '02/2025 - 08/2025',
     title: 'DLL Circuit & Layout Design Research Intern',
-    titleES: 'Practicante en Diseño de Circuitos y Layout DLL',
+    titleES: 'DLL电路与版图设计科研实习生',
     company: 'Technical University of Munich | Institute of Circuit Design',
+    companyES: '慕尼黑工业大学 | 电路设计研究所',
     description: 'Designed a full DLL system in 22nm FDSOI, including sampling signal generation, sampling circuits, and VCDL modules. Completed layout design with over 35 metal layers while considering parasitic effects and reliability.',
-    descriptionES: 'Diseñé un sistema DLL completo en tecnología FDSOI de 22nm, incluyendo generación de señales de muestreo, circuitos y módulos VCDL.'
+    descriptionES: '在22nm FDSOI工艺下设计完整DLL系统，包括采样信号生成、采样电路及VCDL模块；完成超过35层金属的版图设计，并考虑寄生效应与可靠性问题'
   },
   {
     year: '02/2023 - 08/2023',
     yearES: '02/2023 - 08/2023',
     title: 'Software Development Support Intern',
-    titleES: 'Ingeniero en Prácticas de Desarrollo de Software',
+    titleES: '软件开发支持实习生',
     company: 'Huawei (Germany Headquarters) | European Service Operations Center',
+    companyES: '华为（德国总部）| 欧洲服务运营中心',
     description: 'Developed internal tools and automated workflows using Python and HTML, including batch data processing and user behavior tracking. Improved efficiency by over 300%, significantly reducing manual workload. Gained experience in version control (Git) and containerized deployment (Docker).',
-    descriptionES: 'Desarrollé herramientas internas y automatización de procesos utilizando Python y HTML, incluyendo procesamiento masivo de datos y seguimiento del comportamiento de usuarios. Mejoré la eficiencia en más del 300%.'
+    descriptionES: '使用Python与HTML开发内部工具并实现流程自动化，包括批量数据处理与用户行为分析；将工作效率提升300%以上，大幅减少人工操作；熟悉Git版本控制及Docker容器化部署'
   }
 ];
 
@@ -184,20 +198,19 @@ const work = [
 					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-2 sm:px-0" data-en={translations.name.en} data-es={translations.name.es}>
 						{translations.name.en}
 					</h1>
-
 					<p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-lg mx-auto mb-4 sm:mb-6 px-2 sm:px-0">
 						<span class="font-semibold text-gray-900 dark:text-white"
-							data-en="Analog/Mixed-Signal IC Design Engineer"
-							data-es="Ingeniero de Diseño IC Analógico/Mixto">
-							Analog/Mixed-Signal IC Design Engineer
+								data-en={translations.heroTitle.en}
+								data-es={translations.heroTitle.es}>
+								{translations.heroTitle.en}
 						</span>
 
 						<br class="hidden sm:block" />
 
 						<span
-							data-en="Focused on PLL/DLL design, system modeling, and high-performance circuit implementation."
-							data-es="Especializado en diseño PLL/DLL, modelado de sistemas y circuitos de alto rendimiento.">
-							Focused on PLL/DLL design, system modeling, and high-performance circuit implementation.
+							data-en={translations.heroSubtitle.en}
+							data-es={translations.heroSubtitle.es}>
+							{translations.heroSubtitle.en}
 						</span>
 					</p>
 
@@ -211,25 +224,6 @@ const work = [
 						<a href="/contact" class="animated-border cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-medium rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" data-en={translations.getInTouch.en} data-es={translations.getInTouch.es}>
 							{translations.getInTouch.en}
 						</a>
-					</div>
-					<div class="hidden mt-8 sm:mt-10 flex justify-center px-2 sm:px-0">
-						<article class="cv-download-card group" aria-label="Download CV card">
-							<div class="cv-download-card-inner">
-								<div class="text-gray-50 text-left">
-									<span class="cv-initials">Jr</span>
-									<p class="cv-role" data-en={translations.roleTitle.en} data-es={translations.roleTitle.es}>{translations.roleTitle.en}</p>
-								</div>
-								<a href={cvFile} download="CV_Javier_Castillo.pdf" class="cv-download-button" data-en={translations.downloadCv.en} data-es={translations.downloadCv.es}>
-									<span>{translations.downloadCv.en}</span>
-									<svg class="w-5 h-5 fill-current" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M22.1,77.9a4,4,0,0,1,4-4H73.9a4,4,0,0,1,0,8H26.1A4,4,0,0,1,22.1,77.9ZM35.2,47.2a4,4,0,0,1,5.7,0L46,52.3V22.1a4,4,0,1,1,8,0V52.3l5.1-5.1a4,4,0,0,1,5.7,0,4,4,0,0,1,0,5.6l-12,12a3.9,3.9,0,0,1-5.6,0l-12-12A4,4,0,0,1,35.2,47.2Z" fill-rule="evenodd"></path>
-									</svg>
-								</a>
-							</div>
-
-							<svg class="cv-avatar cv-avatar-main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M50.4 51C40.5 49.1 40 46 40 44v-1.2a18.9 18.9 0 0 0 5.7-8.8h.1c3 0 3.8-6.3 3.8-7.3s.1-4.7-3-4.7C53 4 30 0 22.3 6c-5.4 0-5.9 8-3.9 16-3.1 0-3 3.8-3 4.7s.7 7.3 3.8 7.3c1 3.6 2.3 6.9 4.7 9v1.2c0 2 .5 5-9.5 6.8S2 62 2 62h60a14.6 14.6 0 0 0-11.6-11z"/></svg>
-							<svg class="cv-avatar cv-avatar-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M50.4 51C40.5 49.1 40 46 40 44v-1.2a18.9 18.9 0 0 0 5.7-8.8h.1c3 0 3.8-6.3 3.8-7.3s.1-4.7-3-4.7C53 4 30 0 22.3 6c-5.4 0-5.9 8-3.9 16-3.1 0-3 3.8-3 4.7s.7 7.3 3.8 7.3c1 3.6 2.3 6.9 4.7 9v1.2c0 2 .5 5-9.5 6.8S2 62 2 62h60a14.6 14.6 0 0 0-11.6-11z"/></svg>
-						</article>
 					</div>
 				</div>
 			</div>
@@ -276,7 +270,10 @@ const work = [
 						</span>
 					</div>
 
-					<p class="text-sm sm:text-lg text-gray-600 dark:text-gray-400 font-medium mb-2">
+					<!-- 学校 -->
+					<p class="text-sm sm:text-lg text-gray-600 dark:text-gray-400 font-medium mb-2"
+						data-en={edu.school}
+						data-es={edu.schoolES}>
 						{edu.school}
 					</p>
 
@@ -293,133 +290,132 @@ const work = [
 		</section>
 
 
-<section class="max-w-3xl mx-auto py-8 sm:py-10 border-t border-gray-200 dark:border-gray-700 parallax-section ade-in px-2 sm:px-0">
+		<section class="max-w-3xl mx-auto py-8 sm:py-10 border-t border-gray-200 dark:border-gray-700 parallax-section ade-in px-2 sm:px-0">
 
-  <!-- 标题 -->
-  <div class="max-w-2xl mb-6 sm:mb-8">
-	<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
-        data-en="Projects"
-        data-es="Proyectos">
-        Projects
-    </h2>
+			<!-- 标题 -->
+			<div class="max-w-2xl mb-6 sm:mb-8">
+				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
+					data-en={translations.projects.title.en}
+					data-es={translations.projects.title.es}>
+					{translations.projects.title.en}
+				</h2>
 
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2 sm:mt-3"
-       data-en="Selected projects showcasing my technical skills."
-       data-es="Proyectos seleccionados que muestran mis habilidades técnicas.">
-       Selected projects showcasing my technical skills.
-    </p>
-  </div>
+				<p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2 sm:mt-3"
+					data-en={translations.projects.description.en}
+					data-es={translations.projects.description.es}>
+					{translations.projects.description.en}
+				</p>
+			</div>
 
-  <!-- 项目卡片 -->
-  <div class="grid grid-cols-2 gap-4">
-    {
-      featuredProjects.map((project) => (
-        <a href={`/projects/${project.slug}`} 
-           class="animated-border group relative block p-px rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 
-                  transition-all duration-300 hover:scale-105">
+			<!-- 项目卡片 -->
+			<div class="grid grid-cols-2 gap-4">
+				{
+				featuredProjects.map((project) => (
+					<a href={`/projects/${project.slug}`} 
+					class="animated-border group relative block p-px rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 
+							transition-all duration-300 hover:scale-105">
 
-          <div class="relative h-20 flex items-center justify-center text-center overflow-hidden rounded-lg">
+					<div class="relative h-20 flex items-center justify-center text-center overflow-hidden rounded-lg">
 
-            <!-- 正常状态 -->
-            <div class="flex items-center justify-center h-full transition-all duration-300 group-hover:scale-90 group-hover:opacity-0 px-4">
-              <h3 class="text-sm sm:text-base font-bold text-gray-900 dark:text-white">
-                <span class="locale-es">{project.name}</span>
-                <span class="locale-en">{project.enName}</span>
-              </h3>
-            </div>
+						<!-- 正常状态 -->
+						<div class="flex items-center justify-center h-full transition-all duration-300 group-hover:scale-90 group-hover:opacity-0 px-4">
+						<h3 class="text-sm sm:text-base font-bold text-gray-900 dark:text-white">
+							<span class="locale-es">{project.name}</span>
+							<span class="locale-en">{project.enName}</span>
+						</h3>
+						</div>
 
-            <!-- hover 状态 -->
-            <div class="absolute inset-0 flex items-center justify-center translate-y-4 opacity-0 
-                        group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+						<!-- hover 状态 -->
+						<div class="absolute inset-0 flex items-center justify-center translate-y-4 opacity-0 
+									group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+							<span class="text-xs sm:text-sm font-bold text-primary dark:text-white uppercase tracking-wider"
+								data-en={translations.projects.viewProject.en}
+								data-es={translations.projects.viewProject.es}>
+								{translations.projects.viewProject.en}
+							</span>
+						</div>
 
-              <span class="text-xs sm:text-sm font-bold text-primary dark:text-white uppercase tracking-wider"
-                    data-en="View Project"
-                    data-es="Ver proyecto">
-                    View Project
-              </span>
+					</div>
+					</a>
+				))
+				}
+			</div>
 
-            </div>
+			<!-- View all -->
+			<div class="mt-6 text-center">
+				<a href="/projects"
+					class="inline-block text-sm sm:text-base font-medium text-gray-900 dark:text-white hover:underline transition-all"
+					data-en={translations.projects.viewAll.en}
+					data-es={translations.projects.viewAll.es}>
+					{translations.projects.viewAll.en}
+				</a>
+			</div>
 
-          </div>
-        </a>
-      ))
-    }
-  </div>
-
-  <!-- View all -->
-  <div class="mt-6 text-center">
-    <a href="/projects"
-       class="inline-block text-sm sm:text-base font-medium text-gray-900 dark:text-white 
-              hover:underline transition-all"
-       data-en="View all projects →"
-       data-es="Ver todos los proyectos →">
-       View all projects →
-    </a>
-  </div>
-
-</section>
+		</section>
 
 
-<section class="max-w-3xl mx-auto py-8 sm:py-10 border-t border-gray-200 dark:border-gray-700 parallax-section fade-in px-2 sm:px-0">
+		<section class="max-w-3xl mx-auto py-8 sm:py-10 border-t border-gray-200 dark:border-gray-700 parallax-section fade-in px-2 sm:px-0">
 
-  <!-- 标题 -->
-  <div class="max-w-2xl mb-8 sm:mb-10">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
-        data-en={workTranslations.title.en}
-        data-es={workTranslations.title.es}>
-        {workTranslations.title.en}
-    </h2>
+			<!-- 标题 -->
+			<div class="max-w-2xl mb-8 sm:mb-10">
+				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
+					data-en={workTranslations.title.en}
+					data-es={workTranslations.title.es}>
+					{workTranslations.title.en}
+				</h2>
 
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2 sm:mt-3"
-       data-en={workTranslations.description.en}
-       data-es={workTranslations.description.es}>
-       {workTranslations.description.en}
-    </p>
-  </div>
+				<p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2 sm:mt-3"
+				data-en={workTranslations.description.en}
+				data-es={workTranslations.description.es}>
+				{workTranslations.description.en}
+				</p>
+			</div>
 
-  <!-- Timeline -->
-  <div class="space-y-8 sm:space-y-12">
+			<!-- Timeline -->
+			<div class="space-y-8 sm:space-y-12">
 
-    {
-      work.map((item) => (
-        <div class="relative pl-6 sm:pl-8 border-l-2 border-gray-200 dark:border-gray-700 group cursor-pointer hover:scale-105 transition-all">
+				{
+				work.map((item) => (
+					<div class="relative pl-6 sm:pl-8 border-l-2 border-gray-200 dark:border-gray-700 group cursor-pointer hover:scale-105 transition-all">
 
-          <!-- 圆点 -->
-          <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-gray-400 dark:bg-gray-500 group-hover:scale-125 transition-transform"></div>
+					<!-- 圆点 -->
+					<div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-gray-400 dark:bg-gray-500 group-hover:scale-125 transition-transform"></div>
 
-          <!-- 标题 + 时间 -->
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white"
-                data-en={item.title}
-                data-es={item.titleES}>
-                {item.title}
-            </h3>
+					<!-- 标题 + 时间 -->
+					<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+						<h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white"
+							data-en={item.title}
+							data-es={item.titleES}>
+							{item.title}
+						</h3>
 
-            <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400"
-                  data-en={item.year}
-                  data-es={item.yearES}>
-                  {item.year}
-            </span>
-          </div>
+						<span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400"
+							data-en={item.year}
+							data-es={item.yearES}>
+							{item.year}
+						</span>
+					</div>
 
-          <!-- 公司 -->
-          <p class="text-sm sm:text-lg text-gray-600 dark:text-gray-400 font-medium mb-2">
-            {item.company}
-          </p>
+					<!-- 公司 -->
+					<p class="text-sm sm:text-lg text-gray-600 dark:text-gray-400 font-medium mb-2"
+						data-en={item.company}
+						data-es={item.companyES}>
+						{item.company}
+					</p>
 
-          <!-- 描述 -->
-          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400"
-             data-en={item.description}
-             data-es={item.descriptionES}>
-             {item.description}
-          </p>
+					<!-- 描述 -->
+					<p class="text-sm sm:text-base text-gray-600 dark:text-gray-400"
+						data-en={item.description}
+						data-es={item.descriptionES}>
+						{item.description}
+					</p>
 
-        </div>
-      ))
-    }
+					</div>
+				))
+				}
 
-  </div>
-</section>
+			</div>
+		</section>
 
 
 		<section class="max-w-3xl mx-auto pt-8 sm:pt-10 pb-20 sm:pb-15 border-t border-gray-200 dark:border-gray-700 parallax-section fade-in px-2 sm:px-0">

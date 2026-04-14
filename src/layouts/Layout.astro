@@ -43,7 +43,7 @@ import '../styles/global.css';
 				
 				const langBtn = document.getElementById('lang-btn');
 				if (langBtn) {
-					langBtn.textContent = lang === 'es' ? 'ES' : 'EN';
+					langBtn.textContent = lang === 'es' ? '🌍 EN' : '🌍 中';
 				}
 
 				document.querySelectorAll('[data-en]').forEach(el => {
@@ -102,7 +102,7 @@ import '../styles/global.css';
 				
 				const currentLangAttr = document.documentElement.getAttribute('data-lang') || 'en';
 				const isSpanish = currentLangAttr === 'es';
-				const text = isSpanish ? 'Changing language...' : 'Cambiando lenguaje...';
+				const text = isSpanish ? 'Changing language...' : '改变语言中...';
 				
 				modal.innerHTML = `<h2>${text}</h2>`;
 				overlay.appendChild(modal);
