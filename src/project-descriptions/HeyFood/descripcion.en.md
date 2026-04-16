@@ -64,3 +64,9 @@ Next.js · PostgreSQL · Mapbox · Lemon Squeezy
 </span>
 
 <img src="./picture/heyfood4.png" class="rounded-xl mt-4" />
+
+<span class="text-green-500 font-bold">
+✔ Real-time data synchronization  
+✔ High scalability for multi-brand kitchens  
+✔ Seamless third-party integration  
+</span>
