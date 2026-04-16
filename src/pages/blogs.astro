@@ -39,6 +39,12 @@ const translations = {
 };
 ---
 
+<script>
+	if (!sessionStorage.getItem("blog_access")) {
+		window.location.replace("/");
+	}
+</script>
+
 <Layout title={`Blogs | Sihang Wu`}>
 	<Header />
 	
@@ -105,10 +111,6 @@ const translations = {
 	<script>
 
 		document.addEventListener('DOMContentLoaded', () => {
-
-			if (!sessionStorage.getItem("blog_access")) {
-				window.location.replace("/");
-			}
 
 			const observerOptions = {
 				root: null,
