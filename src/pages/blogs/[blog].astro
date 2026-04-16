@@ -4,75 +4,75 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { marked } from 'marked';
 
-
-//该页是动态路由的项目详情页
-
-// 生成所有项目页面
+// 动态生成 blog 页面
 export async function getStaticPaths() {
-  const files = import.meta.glob('../../project-descriptions/*/description.md');
+  const files = import.meta.glob('../../blog-descriptions/*/description.md');
 
   return Object.keys(files).map(path => {
     const folder = path.split('/').slice(-2, -1)[0];
-    return { params: { project: folder } };
+    return { params: { blog: folder } };
   });
 }
-// 当前项目路由
-const { project } = Astro.params;
 
+// 当前 blog
+const { blog } = Astro.params;
 
-// 读取 Markdown（原始文本）
+// 读取 Markdown
 const enFiles = import.meta.glob(
-  '../../project-descriptions/*/description.en.md',
+  '../../blog-descriptions/*/description.en.md',
   { query: '?raw', import: 'default' }
 );
 
 const esFiles = import.meta.glob(
-  '../../project-descriptions/*/description.md',
+  '../../blog-descriptions/*/description.md',
   { query: '?raw', import: 'default' }
 );
 
-// 读取 Markdown
-const enRaw = await enFiles[`../../project-descriptions/${project}/description.en.md`]() as string;
-const esRaw = await esFiles[`../../project-descriptions/${project}/description.md`]() as string;
+// 获取内容
+const enRaw = await enFiles[`../../blog-descriptions/${blog}/description.en.md`]() as string;
+const esRaw = await esFiles[`../../blog-descriptions/${blog}/description.md`]() as string;
 
-// 🔥 修复图片路径
+// 🔥 修复图片路径（和你 project 保持一致逻辑）
 function fixPaths(content: string): string {
   return content.replaceAll(
     './picture/',
-    `../../project-descriptions/${project}/picture/`
+    `../../blog-descriptions/${blog}/picture/`
   );
 }
-//md文件中正确图片地址wxample： <img src="./picture/heyfood1.png" class="rounded-xl shadow-lg" />
 
+// 处理内容
 const enContent = fixPaths(enRaw);
 const esContent = fixPaths(esRaw);
 
 const enHtml = marked(enContent);
 const esHtml = marked(esContent);
 
+// 文案
 const translations = {
-    backToProjects: { en: '← Back to Projects', es: '← 返回项目列表' }
+  backToBlogs: { en: '← Back to Blogs', es: '← 返回博客列表' }
 };
 ---
 
-<Layout title={`${project} | Sihang Wu`}>
+<Layout title={`${blog} | Sihang Wu`}>
   <Header />
 
   <main class="min-h-screen px-4 sm:px-6 md:px-6">
     <article class="prose dark:prose-invert max-w-3xl mx-auto pt-24 sm:pt-32 md:pt-48 pb-16 sm:pb-24 fade-in">
 
-      <!-- 返回按钮 -->
-      <a href="/projects" 
-        class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors mb-8 inline-block" data-en={translations.backToProjects.en} data-es={translations.backToProjects.es}>
-				{translations.backToProjects.en}
-			</a>
+      <!-- 返回 -->
+      <a href="/blogs"
+        class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors mb-8 inline-block"
+        data-en={translations.backToBlogs.en}
+        data-es={translations.backToBlogs.es}>
+        {translations.backToBlogs.en}
+      </a>
 
-      <!-- 英文渲染 -->
+      <!-- 英文 -->
       <div class="locale-en prose max-w-none dark:prose-invert">
         <div set:html={enHtml} />
       </div>
 
-      <!-- 中文渲染 -->
+      <!-- 西班牙语 -->
       <div class="locale-es prose max-w-none dark:prose-invert">
         <div set:html={esHtml} />
       </div>
@@ -85,6 +85,10 @@ const translations = {
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.fade-in')?.classList.add('visible');
+
+      if (!sessionStorage.getItem("blog_access")) {
+        window.location.replace("/");
+      }
     });
   </script>
 </Layout>
