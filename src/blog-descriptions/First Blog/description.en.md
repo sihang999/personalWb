@@ -1,72 +1,27 @@
-# First Blog: Dark Kitchen Management
+# First Blog: My Girlfriend 💖
 
-Multi-tenant SaaS platform designed to optimize cloud kitchen operations.  
-Centralizes digital menus, inventory, and real-time orders with WhatsApp integration and distance-based delivery calculation.
+This is my **very, very beautiful girlfriend**.
 
----
+Every moment with her feels special, and I just wanted to dedicate this small space to capture some of our memories together.
 
-## 🚀 Overview
+## 📸 Moments
 
-HeyFood is a **cloud-native SaaS platform** designed for modern dark kitchens.  
-It enables restaurant operators to manage multiple brands, menus, and delivery channels from a single dashboard.
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-<img src="./picture/heyfood1.png" class="rounded-xl shadow-lg" />
-<img src="./picture/heyfood1.png" class="w-2/3 h-2/3 mx-auto rounded-xl shadow-lg" />
+<img src="./picture/Dy1.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy2.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy3.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy4.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy5.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy6.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy7.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy8.jpg" class="rounded-xl shadow-lg" />
+<img src="./picture/Dy9.jpg" class="rounded-xl shadow-lg" />
 
----
 
-## 🧩 Key Features
+</div>
 
-- Multi-tenant architecture for scalable deployments  
-- Real-time order synchronization  
-- WhatsApp-based ordering integration  
-- Dynamic delivery fee calculation based on distance  
-- Centralized inventory management  
+## ✨ A Little Note
 
----
-
-## 🖥️ User Interface
-
-The platform provides a clean and intuitive dashboard for managing orders and menus.
-
-<img src="./picture/heyfood2.png" class="rounded-xl w-2/3 mx-auto" />
-
----
-
-## ⚙️ System Architecture
-
-The system is built using a modular architecture to ensure scalability and performance.
-
-<img src="./picture/heyfood3.png" class="rounded-xl" />
-
----
-
-## 🧠 Technical Stack
-
-<span class="text-blue-500 font-semibold">
-Next.js · PostgreSQL · Mapbox · Lemon Squeezy
-</span>
-
----
-
-## 🔗 Links
-
-<span class="text-gray-500">Private Project</span>
-
----
-
-## 💡 Highlights
-
-<span class="text-green-500 font-bold">
-✔ Real-time data synchronization  
-✔ High scalability for multi-brand kitchens  
-✔ Seamless third-party integration  
-</span>
-
-<img src="./picture/heyfood4.png" class="rounded-xl mt-4" />
-
-<span class="text-green-500 font-bold">
-✔ Real-time data synchronization  
-✔ High scalability for multi-brand kitchens  
-✔ Seamless third-party integration  
-</span>
+She makes my world brighter in ways I can’t fully describe.  
+I’m really grateful to have her in my life.
